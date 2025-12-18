@@ -9,11 +9,13 @@
     },
     "widgets": [
       { "id": "w-quicklinks", "type": "quick_links", "title": "Schnellzugriff" },
-      { "id": "w-tickets", "type": "service_tickets", "title": "Aktuelle Service-Tickets", "limit": 3 },
-      { "id": "w-devices", "type": "device_overview", "title": "Anlagenübersicht" },
-      { "id": "w-cms-teasers", "type": "cms_teasers", "title": "Neuigkeiten & Trainings" },
+      { "id": "w-tickets", "type": "service_tickets", "title": "Aktuelle Service-Tickets", "limit": 3, "endpoint": "/serviceTickets" },
+      { "id": "w-devices", "type": "device_overview", "title": "Anlagenübersicht", "endpoint": "/devices" },
+      { "id": "w-cms-teasers", "type": "cms_teasers", "title": "Neuigkeiten & Trainings", "endpoint": "/cmsContents" },
       { "id": "w-cart", "type": "shop_cart_preview", "title": "Warenkorb (kurz)" }
-    ]
+    ],
+    "cmsApiHint": "/cmsContents?audience={role}",
+    "generatedAt": "2025-12-11T12:00:00Z"
   },
 
   "cmsContents": [
@@ -46,30 +48,6 @@
       "targetAudiences": ["Alle"],
       "publishDate": "2025-11-28T10:00:00Z",
       "priority": "low"
-    }
-  ],
-
-  "tools": [
-    {
-      "id": "tool-ps",
-      "name": "Produktsuche",
-      "description": "Schnellsuche mit Filter nach Typ, Verfügbarkeit und Ersatzteilen.",
-      "link": "/tools/produktsuche",
-      "roles": ["Einkauf", "Techniker", "Vertrieb"]
-    },
-    {
-      "id": "tool-quote",
-      "name": "Angebotskalkulation",
-      "description": "Kalkulation inkl. Preislisten, Rabatten und Speichern als Entwurf.",
-      "link": "/tools/angebotskalkulation",
-      "roles": ["Vertrieb", "Einkauf"]
-    },
-    {
-      "id": "tool-docs",
-      "name": "Dokumentenverwaltung",
-      "description": "Zugriff auf Betriebsanleitungen, Wartungsprotokolle und Zertifikate.",
-      "link": "/dokumente",
-      "roles": ["Alle"]
     }
   ],
 
@@ -122,7 +100,7 @@
     {
       "ticketNumber": "TK-2025-001",
       "summary": "Leckage an Heizkreis 3",
-      "description": "Kunde meldet Wasserverlust; Gerät wurde stillgelegt. Dringlichkeit hoch. Vor-Ort-Besuch notwendig.",
+      "description": "Kunde meldet Wasserverlust; Gerät stillgelegt. Vor-Ort-Besuch notwendig.",
       "status": "open",
       "statusLabel": "Offen",
       "priority": "high",
@@ -139,7 +117,7 @@
     {
       "ticketNumber": "TK-2025-002",
       "summary": "Routinewartung: Filterwechsel",
-      "description": "Wartung fällig (Filterwechsel). Termin geplant. Ersatzteile vorhanden.",
+      "description": "Wartung fällig (Filterwechsel). Termin geplant.",
       "status": "in_progress",
       "statusLabel": "In Bearbeitung",
       "priority": "medium",
@@ -156,7 +134,7 @@
     {
       "ticketNumber": "TK-2025-003",
       "summary": "Reklamation: Temperaturschwankungen",
-      "description": "Temperaturschwankungen festgestellt. Ursache: defekter Sensor. Sensor ausgetauscht, Abschlussdokumente hochgeladen.",
+      "description": "Defekter Sensor; Sensor ausgetauscht. Abschlussdokumente hochgeladen.",
       "status": "resolved",
       "statusLabel": "Abgeschlossen",
       "priority": "low",
@@ -193,9 +171,7 @@
     "shop": {
       "cartId": "cart-443",
       "itemsCount": 1,
-      "currentCartPreview": [
-        { "sku": "flt-100", "name": "Filter Set", "qty": 1 }
-      ]
+      "currentCartPreview": [{ "sku": "flt-100", "name": "Filter Set", "qty": 1 }]
     },
     "meta": {
       "deviceCount": 12,
@@ -205,13 +181,7 @@
     "capabilities": {
       "canCreateTicket": true,
       "canClaimTicket": true,
-      "cmsApiEndpoint": "/api/cms/contents"
+      "cmsApiEndpoint": "/cmsContents"
     }
-  },
-
-  "apiMeta": {
-    "version": "1.0",
-    "generatedAt": "2025-12-11T12:00:00Z",
-    "notes": "Use cmsContents via CMS API; tickets array shows latest three service tickets for dashboard widget. Structures are illustrative and can be extended."
   }
 }
