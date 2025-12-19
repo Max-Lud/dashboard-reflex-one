@@ -1,187 +1,68 @@
 {
-  "dashboard": {
-    "id": "dash-001",
-    "title": "Reflex:ONE Zentrales Dashboard",
-    "description": "Personalisierte Arbeitsplattform mit Schnellzugriffen, Statusanzeigen und Content-Teasern.",
-    "personalization": {
-      "enabled": true,
-      "sources": ["CMS", "FSM-light", "SmartDeviceCare", "Shop"]
-    },
-    "widgets": [
-      { "id": "w-quicklinks", "type": "quick_links", "title": "Schnellzugriff" },
-      { "id": "w-tickets", "type": "service_tickets", "title": "Aktuelle Service-Tickets", "limit": 3, "endpoint": "/serviceTickets" },
-      { "id": "w-devices", "type": "device_overview", "title": "Anlagenübersicht", "endpoint": "/devices" },
-      { "id": "w-cms-teasers", "type": "cms_teasers", "title": "Neuigkeiten & Trainings", "endpoint": "/cmsContents" },
-      { "id": "w-cart", "type": "shop_cart_preview", "title": "Warenkorb (kurz)" }
-    ],
-    "cmsApiHint": "/cmsContents?audience={role}",
-    "generatedAt": "2025-12-11T12:00:00Z"
-  },
-
-  "cmsContents": [
+  "tickets": [
     {
-      "id": "cms-101",
-      "type": "teaser",
-      "title": "Techniker Training: Wartung kompakt",
-      "excerpt": "Live-Webinar: Filterwechsel & Diagnoseprozesse.",
-      "link": "/content/trainings/101",
-      "targetAudiences": ["Techniker", "Vertrieb"],
-      "publishDate": "2025-12-05T07:00:00Z",
-      "priority": "medium"
-    },
-    {
-      "id": "cms-102",
-      "type": "news",
-      "title": "Service-Beschreibung: Smart Device Care",
-      "excerpt": "Übersicht der Services und SLA-Optionen.",
-      "link": "/content/service/smart-device-care",
-      "targetAudiences": ["Kunde", "Techniker"],
-      "publishDate": "2025-12-01T08:30:00Z",
-      "priority": "high"
-    },
-    {
-      "id": "cms-103",
-      "type": "event",
-      "title": "Produktlaunch: ControlBox 3",
-      "excerpt": "Vor-Ort Demo und Q&A in Ihrer Region.",
-      "link": "/content/events/controlbox-3",
-      "targetAudiences": ["Alle"],
-      "publishDate": "2025-11-28T10:00:00Z",
-      "priority": "low"
-    }
-  ],
-
-  "devices": [
-    {
-      "id": "dev-4532",
-      "name": "HK-Unit-4532",
-      "location": "Objekt A / Gebäude 3 / Raum 112",
-      "status": "fault",
-      "statusLabel": "Störung",
-      "lastSeen": "2025-12-10T05:22:00Z",
-      "nextMaintenanceDue": "2026-01-15T00:00:00Z",
-      "manualLink": "/documents/manuals/hk-unit-4532.pdf",
-      "maintenanceLogs": [
-        { "id": "log-9001", "date": "2025-09-10T08:00:00Z", "summary": "Filterwechsel" }
-      ],
-      "relatedTickets": ["TK-2025-001"]
-    },
-    {
-      "id": "dev-0219",
-      "name": "Vent-Panel-219",
-      "location": "Objekt B / Technikraum",
-      "status": "operational",
-      "statusLabel": "In Betrieb",
-      "lastSeen": "2025-12-11T11:00:00Z",
-      "nextMaintenanceDue": "2026-03-01T00:00:00Z",
-      "manualLink": "/documents/manuals/vent-panel-219.pdf",
-      "maintenanceLogs": [
-        { "id": "log-9010", "date": "2025-03-15T09:00:00Z", "summary": "Softwareupdate" }
-      ],
-      "relatedTickets": ["TK-2025-002"]
-    },
-    {
-      "id": "dev-0088",
-      "name": "ControlBox-88",
-      "location": "Objekt C / Verteiler",
-      "status": "operational",
-      "statusLabel": "In Betrieb",
-      "lastSeen": "2025-12-02T12:00:00Z",
-      "nextMaintenanceDue": "2026-06-01T00:00:00Z",
-      "manualLink": "/documents/manuals/controlbox-88.pdf",
-      "maintenanceLogs": [
-        { "id": "log-9025", "date": "2025-12-01T10:30:00Z", "summary": "Sensor Austausch" }
-      ],
-      "relatedTickets": ["TK-2025-003"]
-    }
-  ],
-
-  "serviceTickets": [
-    {
-      "ticketNumber": "TK-2025-001",
-      "summary": "Leckage an Heizkreis 3",
-      "description": "Kunde meldet Wasserverlust; Gerät stillgelegt. Vor-Ort-Besuch notwendig.",
-      "status": "open",
-      "statusLabel": "Offen",
-      "priority": "high",
-      "createdAt": "2025-12-10T06:30:00Z",
-      "updatedAt": "2025-12-10T06:45:00Z",
-      "assignedTo": null,
-      "contact": { "name": "Max Mustermann", "phone": "+49-123-456789", "email": "max@kunde.de" },
-      "relatedDeviceId": "dev-4532",
-      "sla": { "targetResponseHours": 4, "currentBreach": false },
-      "actionsAvailable": ["claim", "addNote", "attachDocument", "scheduleVisit"],
-      "source": "portal",
-      "visibility": ["Techniker", "Service Manager", "Kunde"]
-    },
-    {
-      "ticketNumber": "TK-2025-002",
-      "summary": "Routinewartung: Filterwechsel",
-      "description": "Wartung fällig (Filterwechsel). Termin geplant.",
-      "status": "in_progress",
-      "statusLabel": "In Bearbeitung",
+      "ticketNo": "TCK-10421",
+      "subject": "Wartungstermin verschieben",
+      "status": "waitingCustomer",
       "priority": "medium",
-      "createdAt": "2025-12-08T09:00:00Z",
-      "updatedAt": "2025-12-09T14:00:00Z",
-      "assignedTo": "Techniker A",
-      "contact": { "name": "Sabine Keller", "phone": "+49-987-654321", "email": "sabine@kunde.de" },
-      "relatedDeviceId": "dev-0219",
-      "sla": { "targetResponseHours": 48, "currentBreach": false },
-      "actionsAvailable": ["updateStatus", "addNote", "closeTicket"],
-      "source": "scheduled-maintenance",
-      "visibility": ["Techniker", "Einkauf"]
+      "updatedAt": "2025-12-18T09:10:00Z",
+      "assetRef": "ANL-0081"
     },
     {
-      "ticketNumber": "TK-2025-003",
-      "summary": "Reklamation: Temperaturschwankungen",
-      "description": "Defekter Sensor; Sensor ausgetauscht. Abschlussdokumente hochgeladen.",
-      "status": "resolved",
-      "statusLabel": "Abgeschlossen",
+      "ticketNo": "TCK-10418",
+      "subject": "Störung: Sensor meldet Fehlercode E17",
+      "status": "inProgress",
+      "priority": "high",
+      "updatedAt": "2025-12-17T16:40:00Z",
+      "assetRef": "ANL-0023"
+    },
+    {
+      "ticketNo": "TCK-10402",
+      "subject": "Anfrage Wartungsprotokoll (PDF)",
+      "status": "assigned",
       "priority": "low",
-      "createdAt": "2025-12-01T11:45:00Z",
-      "updatedAt": "2025-12-01T15:20:00Z",
-      "assignedTo": "Servicezentrum Süd",
-      "contact": { "name": "Servicezentrum Süd", "phone": "+49-800-555000", "email": "max.ludwikowski@arineo.com" },
-      "relatedDeviceId": "dev-0088",
-      "sla": { "targetResponseHours": 72, "currentBreach": false },
-      "actionsAvailable": ["viewDocuments", "reopen"],
-      "source": "customer-complaint",
-      "visibility": ["Techniker", "Service Manager", "Kunde"]
+      "updatedAt": "2025-12-16T11:05:00Z",
+      "assetRef": "ANL-0044"
     }
   ],
-
-  "userProfile": {
-    "userId": "u-1001",
-    "name": "Anna Becker",
-    "roles": ["Servicetechniker", "Einkauf"],
-    "preferredLanguage": "de",
-    "preferences": {
-      "dashboardWidgets": ["w-tickets", "w-devices", "w-quicklinks"],
-      "notifications": { "email": true, "sms": false, "inApp": true }
+  "assets": [
+    {
+      "id": "ANL-0023",
+      "name": "Reflex Unit A",
+      "serialNo": "SN-88421",
+      "operatingStatus": "running",
+      "maintenanceStatus": "dueSoon",
+      "faultStatus": "fault"
     },
-    "quickAccess": [
-      { "title": "Dashboard", "href": "/dashboard" },
-      { "title": "Service erstellen", "href": "/service/new", "cta": true },
-      { "title": "Produktsuche", "href": "/tools/produktsuche" },
-      { "title": "Dokumente", "href": "/dokumente" }
-    ],
-    "smartDeviceCareProjects": [
-      { "projectId": "sdc-77", "name": "Fernüberwachung Objekt A", "status": "active" }
-    ],
-    "shop": {
-      "cartId": "cart-443",
-      "itemsCount": 1,
-      "currentCartPreview": [{ "sku": "flt-100", "name": "Filter Set", "qty": 1 }]
+    {
+      "id": "ANL-0044",
+      "name": "Reflex Unit B",
+      "serialNo": "SN-55210",
+      "operatingStatus": "running",
+      "maintenanceStatus": "ok",
+      "faultStatus": "none"
     },
-    "meta": {
-      "deviceCount": 12,
-      "openTicketsCount": 2,
-      "lastLogin": "2025-12-11T07:45:00Z"
-    },
-    "capabilities": {
-      "canCreateTicket": true,
-      "canClaimTicket": true,
-      "cmsApiEndpoint": "/cmsContents"
+    {
+      "id": "ANL-0081",
+      "name": "Reflex Unit C",
+      "serialNo": "SN-11009",
+      "operatingStatus": "stopped",
+      "maintenanceStatus": "overdue",
+      "faultStatus": "warning"
     }
-  }
+  ],
+  "projects": [
+    {
+      "id": "PRJ-9001",
+      "name": "Smart Device Care – Rollout Nord",
+      "status": "active",
+      "updatedAt": "2025-12-17T09:00:00Z"
+    },
+    {
+      "id": "PRJ-9002",
+      "name": "Retrofit Linie 2",
+      "status": "paused",
+      "updatedAt": "2025-12-12T14:30:00Z"
+    }
+  ]
 }
