@@ -1,28 +1,28 @@
 {
   "tickets": [
     {
-      "ticketNo": "TCK-10421",
-      "subject": "Wartungstermin verschieben",
-      "status": "waitingCustomer",
-      "priority": "medium",
+      "ticketNo": "RQ00000173",
+      "subject": "Anfrage für einen Wartungsvoranschlag",
+      "status": "Anfrage gesichtet",
+      "priority": "Medium",
       "updatedAt": "2025-12-18T09:10:00Z",
-      "assetRef": "ANL-0081"
+      "assetRef": "ANL-8910100"
     },
     {
-      "ticketNo": "TCK-10418",
-      "subject": "Störung: Sensor meldet Fehlercode E17",
-      "status": "inProgress",
-      "priority": "high",
+      "ticketNo": "RQ00000172",
+      "subject": "Lieferung beschädigt",
+      "status": "in Klärung",
+      "priority": "Hoch",
       "updatedAt": "2025-12-17T16:40:00Z",
-      "assetRef": "ANL-0023"
+      "assetRef": "ANL-8910142"
     },
     {
-      "ticketNo": "TCK-10402",
+      "ticketNo": "RQ00000171",
       "subject": "Anfrage Wartungsprotokoll (PDF)",
-      "status": "assigned",
-      "priority": "low",
+      "status": "Rückmeldung erhalten",
+      "priority": "Niedrig",
       "updatedAt": "2025-12-16T11:05:00Z",
-      "assetRef": "ANL-0044"
+      "assetRef": "ANL-8912012"
     }
   ],
   "assets": [
@@ -53,15 +53,24 @@
   ],
   "projects": [
     {
-      "id": "PRJ-9001",
-      "name": "Smart Device Care – Rollout Nord",
-      "status": "active",
+      "id": "NTBTWRZ6OPVO",
+      "name": "MAG Kaltwasser KM1",
+      "status": "Aktiv",
+      "location": "Beckhofstraße 5, 48145 Münster, DE",
       "updatedAt": "2025-12-17T09:00:00Z"
     },
     {
-      "id": "PRJ-9002",
-      "name": "Retrofit Linie 2",
-      "status": "paused",
+      "id": "NTBTWRZ6OPVO",
+      "name": "Fillsoft",
+      "status": "Pausiert",
+      "location": "Beckhofstraße 5, 48145 Münster, DE",
+      "updatedAt": "2025-12-12T14:30:00Z"
+    },
+    {
+      "id": "NTBTWRZ6OPVO",
+      "name": "Servitec",
+      "status": "Pausiert",
+      "location": "Beckhofstraße 5, 48145 Münster, DE",
       "updatedAt": "2025-12-12T14:30:00Z"
     }
   ]
