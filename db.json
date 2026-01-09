@@ -3,7 +3,7 @@
     {
       "ticketNo": "RQ00000173",
       "subject": "Anfrage für einen Wartungsvoranschlag",
-      "status": "Anfrage gesichtet",
+      "status": "Test123",
       "priority": "Medium",
       "updatedAt": "2025-12-18T09:10:00Z",
       "assetRef": "ANL-8910100"
